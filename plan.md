@@ -1,6 +1,7 @@
 # Plan računarskih vežbi 
 
 | #   | Tema                                               | datum            |
+| --- | ---                                                | ----             |
 | 1.  | Uvodne vezbe - python, venv, PyCharm               | 17-20.10.2022.   |
 | 2.  | Python - podsećanje                                | 24-27.10.2022.   |
 | 3.  | Kreacioni obrasci                                  | 31.10-03.11.2022 |
