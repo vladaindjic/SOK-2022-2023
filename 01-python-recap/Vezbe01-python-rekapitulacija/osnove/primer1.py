@@ -2,7 +2,7 @@ print("Ime modula primer1.py: ", __name__)
 import sys
 
 print("Ovo je sys.path:", sys.path)
-import osnove.primer2
+import primer2
 
 
 def osnovni_tipovi():
