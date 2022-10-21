@@ -48,3 +48,9 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+.idea/
+
+**/.idea
+**/__pycache__
+**/Vezba01-resenje

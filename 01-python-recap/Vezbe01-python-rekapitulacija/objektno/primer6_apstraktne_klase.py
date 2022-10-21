@@ -1,5 +1,3 @@
-from packageExample import *
-from independent_module import add
 from abc import ABC, abstractmethod
 
 
@@ -43,22 +41,8 @@ class Point(Drawable):
 
 
 if __name__ == "__main__":
-    # Importing from independent module example
-    print(add(1, 2))
-
-    # Importing from package with __all__ variable set example
-    print(module1.function_a())
-    print(module2.function_b())
-
-    try:
-        print(module3.function_c())
-    except NameError:
-        print("You need to explicitly import module3!")
-
-    # Relative importing is inside module3
-    from packageExample import module3
-    print(module3.relative_import())
-
     # Property and ABC demon
     point = Point(2.0, 2.0)
     point.draw()
+    # baca gresku
+    # abs = Drawable()
