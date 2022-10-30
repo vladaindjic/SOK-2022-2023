@@ -1,0 +1,89 @@
+======================== Abstract Factory
+
+def main():
+  createInterface(CreatorGnome())
+  createInterface(CreatorMacOS())
+  createInterface(CreatorWindows())
+
+
+def createInterface(Creator crt):
+  products = []
+  products.append(crt.createButton())
+  products.append(crt.createLabel())
+  products.append(crt.createEditField())
+  for p in products:
+    p.draw()
+  
+
+======================= Prototype:
+
+def client1():
+  Button btn;
+  Label label;
+  Component cmp;
+  BiloGdeLayout bgl; 
+  blg.add(btn, BiloGdeConstraint(x=10, y=10, width=100, height=30, align=center, ...));
+  blg.add(label, BiloGdeConstraint(x=12, y=10, width=100, height=30, align=center, ...));
+  blg.add(cmp, BiloGdeConstraint(x=13, y=10, width=100, height=30, align=center, ...));
+  # Do this 1024 times... 
+
+def client2():
+  # Not fan of sausages 
+  BiloGdeConstraint constr1 = BiloGdeConstraint(x=10, y=10, width=100, height=20, align=left, ...); 
+  constr2 = constr1.clone();
+  constr2.x = 12;
+  constr3 = constr2.clone();
+  constr3.x = 13;
+  blg.add(btn, constr1)
+  blg.add(label, constr2)
+  blg.add(cmp, constr3)
+
+class BiloGdeLayout:
+  content = [] # list of pairs like (component, constraint)
+
+  def add(cmp, constr):
+    self.content.add((cmp, constr))
+
+  def layout:
+    for cmp, constr in componentes:
+      print("The component: %s, is placed here: %s", cmp, constr)
+
+
+============================= Builder
+
+  abstract class Builder:
+    buildTitle(str)
+    buildSubtitle(str)
+    buildParagraph(str)
+
+  class HTMLBuilder(Builder):
+    def buildTitle(tekst):
+      return "<h1>" + tekst +  "</h1>"
+    ...
+
+  class MDBuilder(Builder):
+    def buildTitle(tekst):
+      return "#" + tekst
+    ...
+
+  class Director:
+    # you can define structure as you like (a list of strings, ordered dict, etc.)
+    # the following assumes that doc contains title, subtitle and paragraph respectively
+    def constructDoc(Builder bld):
+      out = ""
+      out += bld.buildTitle("Ovo je naslov")
+      out += bld.BuildSubtitle("Ovo je neki podnaslov")
+      out += bld.buildParagraph("Ovo je neki paragraph")
+      return out
+
+  class Client:
+    def doSomething():
+      dir = Director();
+      htmlBuilder = HTMLBuilder();
+      mdBuilder = MDBuilder();
+      doc1 = dir.constructDoc(htmlBuilder) 
+      print(doc1)
+      doc2 = dir.constructDoc(mdBuilder) 
+      print(doc2)
+
+
