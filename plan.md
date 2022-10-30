@@ -4,7 +4,7 @@
 | --- | ---                                                                 | ----             |
 | 1.  | [Uvodne vezbe - python, venv, PyCharm](00-upoznavanje-sa-predmetom) | 17-20.10.2022.   |
 | 2.  | [Python - podsećanje](01-python-recap)                              | 24-27.10.2022.   |
-| 3.  | Kreacioni obrasci                                                   | 31.10-03.11.2022 |
+| 3.  | [Kreacioni obrasci](02-kreacioni-obrasci)                           | 31.10-03.11.2022 |
 | 4.  | Strukturalni obrasci                                                | 07-10.11.2022.   |
 | 5.  | Obrasci ponasanja                                                   | 14-17.11.2022.   |
 | 6.  | Dependency Injection                                                | 21-24.11.2022.   |
