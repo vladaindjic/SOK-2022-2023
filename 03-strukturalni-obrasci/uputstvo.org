@@ -1,0 +1,9 @@
+#+title: Proxy obrazac
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: author:nil
+
+*Agenda vežbi:*
+1. U ovom terminu vežbi trebalo bi da se podsetiti [[http://www.igordejanovic.net/courses/sok/03-strukturalni/#/slide-6][*Proxy*]] obrasca.
+2. Nakon toga, trebalo bi da odradite *zadatke* navedene u priloženom */.pdf/ dokumentu*.

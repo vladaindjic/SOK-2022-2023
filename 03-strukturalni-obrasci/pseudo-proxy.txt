@@ -1,0 +1,106 @@
+================================ Proxy Profiler
+
+interface (abstract class) Service:
+  video360();
+  video720();
+  videoHD();
+
+
+class VideoService(Service):
+	"""
+	Real service implementation.
+	"""
+    # TODO: implement constructor ...
+    # TODO: each method should print the name and sleep for some time.
+	pass
+
+     
+class ProxyVS(Service):
+	"""
+	Proxy Service Implementation
+	"""
+    # TODO: keep a reference to the real VideoService instantiated
+    	in the initializer method
+    # TODO: support data structure with the following metrics for each function call:
+    	- number of calls (reference counter)
+    	- total execution time
+    
+    # TODO: implement service methods that should:
+    	- increment reference counter
+    	- delegate the call to the VideoService
+    	- measure the time spent in the delegated method call
+    	- accumulate total execution time
+    	
+    # TODO: Implement show_stats method that for each Service method does
+    	the following:
+    	- shows total number of calls (reference counter)
+    	- shows total execution time
+    	- calculates average execution time per call
+    
+    
+def client(service):
+    for i in range (100):
+        service.video360();
+        service.video720();
+        service.videoHD();
+
+
+def main():
+    service = ProxyVS()
+    client(service)
+    service.show_stats()
+
+
+================================ Lazy Proxy
+
+interface (abstract class) Service:
+    def play()                             # plays the video
+    def resolution                         # property that returns current resolution;
+    def @resolution.setter(new_resolution) # setter for the previous property
+
+
+
+# TODO: Implement Video360, Video720 and VideoHD. 
+	Each class should override the play method with print and sleep.
+	Res propery should return the value of the corresponding resolution,
+	while res.setter does nothing.
+
+
+class VideoProxy(Service):
+	"""
+	Attributes:
+          - delegate - keeps the reference to the actual service (initially None)
+	  - __resolution - keeps the value of the current resolution (initially 0)
+	
+	Properties:
+	  - Resolution property should return the current resolution without instantiation.
+	  - Resolution setter checks whether the new_resolution matches the current one.
+		If so, does nothing. Otherwise, updates the current resolution and invalidates
+		the reference to the actual service (delegate = None).  
+	
+	Methods:
+	  - play - Checks if the actual service exists. If so, delegates the call to it.
+	    Otherwise, lazily instantiates the actual service (calls the constructor)
+	    and delegates the call.
+	"""
+    
+
+def client(service):
+    service.resolution = 360
+    print(service.resolution)
+    service.resolution = 720
+    print(service.resolution)
+    service.resolution = 1080
+    print(service.resolution)
+    # NOTE: No actual service has been initialized (delegate is still None)
+    service.play() # actual service gets created
+    
+    resolutions = [360, 720, 1080]
+    for i in range(100):
+    	service.resolution = resolutions[i % 3]
+    	service.play()
+   
+
+def main():
+    service = VideoProxy()
+    client(service)
