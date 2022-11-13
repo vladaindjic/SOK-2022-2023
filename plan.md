@@ -6,7 +6,7 @@
 | 2.  | [Python - podsećanje](01-python-recap)                              | 24-27.10.2022.   |
 | 3.  | [Kreacioni obrasci](02-kreacioni-obrasci)                           | 31.10-03.11.2022 |
 | 4.  | [Strukturalni obrasci](03-strukturalni-obrasci)                     | 07-10.11.2022.   |
-| 5.  | Obrasci ponasanja                                                   | 14-17.11.2022.   |
+| 5.  | [Obrasci ponasanja](04-obrasci-ponasanja)                           | 14-17.11.2022.   |
 | 6.  | Dependency Injection                                                | 21-24.11.2022.   |
 | 7.  | Setuptools                                                          | 28.11-01.12.2022 |
 | 8.  | Django tutorial (nastavak setuptools-a, ako treba)                  | 05-08.12.2022.   |

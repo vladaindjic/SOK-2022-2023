@@ -1,0 +1,11 @@
+#+title: Obrasci ponašanja 
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: author:nil
+
+*Agenda vežbi:*
+1. U ovom terminu vežbi trebalo bi da se podsetiti sledećih [[http://www.igordejanovic.net/courses/sok/04-obrasci-ponasanja/][obrazaca ponašanja]]:
+   - [[http://www.igordejanovic.net/courses/sok/04-obrasci-ponasanja/#/slide-8][*Strategy*]],
+   - [[http://www.igordejanovic.net/courses/sok/04-obrasci-ponasanja/#/slide-6][*Observer*]]
+2. Nakon toga, trebalo bi da odradite *zadatke* navedene u priloženom */.pdf/ dokumentu*.
