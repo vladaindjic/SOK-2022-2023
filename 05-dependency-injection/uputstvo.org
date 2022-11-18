@@ -1,0 +1,27 @@
+#+title: Dependency Injection
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+
+
+*Napomena:* Video-materijale za današnji termin vežbi možete pronaći [[https://drive.google.com/file/d/1rKTlfzfZYTzYE4CJa5KIhvdM0xtiJ_Gr/view?usp=sharing][ovde]].
+
+Današnji termin vežbi namenjen je za vežbanje [[http://www.igordejanovic.net/courses/tech/dependency-injection/][/Dependency Injection/]] koncepta.
+Ovaj koncept služi za kreiranje objekata koji formiraju složeni graf zavisnosti.
+Cilj upotrebe ovog koncepte jeste smanjenje nepotrebnog koda za inicijalizaciju objekata. 
+
+Tokom ovih vežbi, koristićemo [[https://injector.readthedocs.io/en/latest/terminology.html][/Injector/ biblioteku]]. Instalaciju iste u vaše virtuelno
+možete obaviti komandom: [[https://pypi.org/project/injector/][~pip install injector~]].
+
+Arhiva /DIExample.zip/ sadrži ~simple.py~ modul u kome se nalazi jednostavan
+primer upotrebe ovog koncepta.
+Nešto složeniji primer upotrebe se nalazi u modulu ~injector_shops.py~.
+
+Zadaci koje je potrebno rešiti tokom ovih vežbi nalaze se u priloženom /.pdf/ dokumentu.
+Smernice za njihovo rešavanje su sledeće:
+- Kostur za rešenje zadataka možete pronaći u /Vezbe5DIDemo.zip/ arhivi.
+- Prvi zadatak ne morate rešiti upotrebom AbstractFactory šablona.
+- Za injektovanje klasa koje su Singleton, pogledati [[https://injector.readthedocs.io/en/latest/scopes.html#singletons][dokumentaciju]].
+- U drugom zadatku potrebno je koristiti ~CallableProvider~, čiji je promer upotrebe dostupan [[https://injector.readthedocs.io/en/latest/api.html#injector.CallableProvider][na linku]].
+- Treći zadatak nije obavezan za rešavanje.
+- Rešenje zadataka možete pronaći u /Vezbe5DIResenje.zip/ arhivi.
