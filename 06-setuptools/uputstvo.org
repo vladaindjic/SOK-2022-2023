@@ -1,0 +1,21 @@
+#+title: Razvoj komponenti u Python-u
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+
+*Napomena:* Video-materijale za današnji termin vežbi možete pronaći [[https://drive.google.com/file/d/1534kHjcJ4pg_jaf9YYEjxSdoDzCd0Uqg/view?usp=sharing][ovde]].
+
+U ovom terminu vežbi trebalo bi da se malo bolje upoznate sa razvojem komponenti
+u programskom jeziku Python uz pomoć na [[http://www.igordejanovic.net/courses/tech/setuptools/#/slide-1][setuptools]] alata.
+
+Primer proširive aplikacije možete pronaći u direktorijumu /StudentskaSluzbaComponent/.
+
+Zadatke koje bi trebalo da odraditi u toku današnjih vežbi možete pronaći u /SS-zadaci.pdf/ dokumentu.
+U direktorijumu /StudentskaSluzbaComponent/ možete pronaći kostur i smernice za rešenje zadataka.
+Ista arhiva implementira gotovo identični skup funkcionalnosti za entitet student.
+
+* ~declare_namespace~ and ~namespace_packages~
+  U video-materijalima nije objašnjena veza između ~declare_namespace~ i ~namespace_packages~.
+  Detaljnije objašnjena možete pronaći na sledećim linkovima:
+  - [[https://github.com/vladaindjic/SPC-exchange-students/blob/master/ComponentsSimple/Core/plugin/__init__.py][~declare_namespace~]]
+  - [[https://github.com/vladaindjic/SPC-exchange-students/blob/master/ComponentsSimple/Core/setup.py][~namespace_packages~]]
