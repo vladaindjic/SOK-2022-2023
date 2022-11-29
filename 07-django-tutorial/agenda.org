@@ -1,0 +1,15 @@
+#+title: Django radni okvir - tutorial
+#+author: Vladimir Inđić
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+
+Današnji termin vežbi služi za upoznavanje sa [[https://www.djangoproject.com/][Django radnim okvirom]].
+Vaš zadatak je da samostalno prođete [[https://docs.djangoproject.com/en/3.2/intro/tutorial01/][kroz sledeći tutorial]].
+Ovaj tutorial će Vas upoznati sa osnovnim konceptima na kojima je zasnovan Django radni okvir.
+Dovoljno je da pređete sledeće stranice: [[https://docs.djangoproject.com/en/3.2/intro/tutorial01/][prvi]], [[https://docs.djangoproject.com/en/3.2/intro/tutorial02/][drugi]], [[https://docs.djangoproject.com/en/3.2/intro/tutorial03/][treći]], [[https://docs.djangoproject.com/en/3.2/intro/tutorial04/][četvrti]] i [[https://docs.djangoproject.com/en/3.2/intro/tutorial06/][šesti deo]].
+Koga zanima automatizovano testiranje, može da pogledao i [[https://docs.djangoproject.com/en/3.2/intro/tutorial05/][deo broj pet]].
+Ukoliko imate bilo kakvih pitanje, možete se konsultovati sa predmetnim asistentom.
+
+Uputstvo za instalaciju Django paketa u virtualno razvojnom okruženje
+možete pronaći [[https://docs.djangoproject.com/en/3.2/topics/install/#installing-official-release][ovde]].
+
