@@ -119,3 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# To suppress warnings like the following:
+# "WARNINGS:
+# prodavnice.Artikal: (models.W042) Auto-created primary key used when not 
+# defining a primary key type, by default 'django.db.models.AutoField'.
+#	HINT: Configure the DEFAULT_AUTO_FIELD setting or the ProdavniceConfig.default_auto_field 
+#   attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'."
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
