@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <!--Ucitavanje d3.js biblioteke moguce je na ovaj nacin.-->
     {% load static %}
-    <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
+<!-- Download d3.v3.js from a website-->
+<!--    <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>-->
+<!-- Use local d3.v3.js -->
+    <script type="text/javascript" src="{% static 'd3.v3.js' %}"></script>
     <link rel="stylesheet" href="{% static 'style.css' %}"/>
     <title>{{title}}</title>
     {% block head_sadrzaj %}{% endblock %}
