@@ -1,0 +1,98 @@
+#+title: Django + D3.js
+#+author: Vladimir Inđić
+#+options: toc:nil
+#+options: date:nil
+
+*Napomena:* Video-materijale za današnji termin vežbi možete pronaći [[https://drive.google.com/file/d/1usVK8My45GlhoEvKsZiSlJxnH1YDrY4K/view?usp=sharing][ovde]].
+
+* Struktura projekta
+  Struktura priložene /Vezbe9.zip/ arhive je sledeća:
+  - ~django_project~ direktorijum sadrži podešavanja Django veb sajta.
+  - ~D3Core~ direktorijum predstavlja plugin/komponentu koja se odnosi na
+    Django aplikaciju. Ova aplikacije sadrži primere upotrebe D3.js biblioteke.
+  - ~UcitavanjeKod~ dorektorijuma predstavlja plugin/komponentu koja specificira
+    servis koji pothranjuje podatke u bazu podataka.
+
+* Pokretanje projekta
+  Da biste pokrenuli projekat, potrebno je da u virtualno razvojono okruženje instalirate
+  navedene plugine/komponente. To radite na sledeći način
+  #+begin_src shell
+    cd Vezbe9
+    # instalacija D3Core komponente
+    cd D3Core
+    python setup.py install
+    # instalacija UcitavanjeKod komponente.
+    cd ../UcitavanjeKod
+    # instalacija UcitavanjeKod komponente.
+  #+end_src
+
+  Nakon toga, pozicionirate se u direktorijum ~Vezbe9/django_project~ i odraditi
+  pripremu Django projekta, praćenu pokretanjem servera.
+  #+begin_src shell
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+  #+end_src
+
+
+ *Napomena:* Moguće je jednostavnije pokrenuti aplikaciju putem skripte ~run.sh~.
+ Upotreba ove skripte moguća je na Linux OS-u. Uklanjanje generisanih datoteka i
+ direktorijuma moguće je upotrebom ~clean.sh~ skripte.
+  
+* Ucitavanje plugina u Django aplikaciju
+  Plugin ~UcitavanjeKod~ implementira servis
+
+  ~UcitavanjeKod.ucitavanje.kod.ucitavanje_kod.UcitatiProdavniceKod~
+  koji redefiniše apstraktnu klasu ~D3Core.d3_primeri.services.ucitati.UcitatiService~.
+  Kao što možete primetiti, ovaj plugin pothranjuje podatke u bazu podataka
+  ~D3Core~ Django aplikacije.
+
+  Do učitavanja ovog plugina dolazi prilikom startovanja ~D3Core~ Django aplikacije kada se izvrši ~ready~ metoda
+  ~AppConfig~ klase naslednice. Više informacija u kodu. 
+
+  Upotreba ovog plugina se demonstrira gađanjem sledećeg endpoint-a ~/ucitavanje/plugin/ucitati_prodavnice_kod~.
+  Vise informacija o tome šta se dalje dešava, pogledati kod i odgovarajuće komentare. 
+
+* D3.js
+  ~D3Core~ predstavlja Django aplikaciju koja je razvijena kao posebna komponenta (plugin za ~django_project~ sajt).
+  Pogledati kako izgleda njena ~setup.py~ skripta. Može se primetiti da nema ~entry_points~, a Django
+  ipak zna da je prepozna. Takođe, pogledati kako se statički sadržaj instalira u paket (~package_data~).
+  
+  Ova aplikacija sadrži primere upotrebe [[https://d3js.org/][D3.js]] biblioteke. Uvod u priču o ovom biblioteci
+  možete pronaći kod profesora [[http://www.igordejanovic.net/courses/tech/d3][na predavanjima]].
+
+  Da biste koristili ovu biblioteku, neophodno je njeno ucitavanje u Django template što možete videti
+  u ~base.html~ template-u.
+
+** Primer 1
+   Template za ovaj primer je ~primer1.html~, koji demonstrira upotrebu SVG elemenata.
+   Potrebno je napraviti inicijalni [[https://www.w3schools.com/html/html5_svg.asp][~<svg>~ element]] koji predstavlja platno za iscrtavanje
+   elemenata poput: kruga, pravougaonika, elipse, linije, izlomljene linije, poligona, itd.
+   Elemente možete grupisati upotrebno [[https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g][~<g>~ taga]].
+   U template-u možete videti koje sve atribute SVG elementi poseduje i kako se njima
+   može statički manipulisati.
+
+** Primer 2
+   U ~primer2.html~ možete videti upotrebu [[https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform][~transform~ atributa]] za transliranje SVG elemenata.
+
+** Primer 3
+   U ~primer2.html~ možete videti upotrebu [[https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform][~transform~ atributa]] za transliranje i skaliranje SVG elemenata.
+
+** Primer 4
+   ~primer4.html~ koristi osnovne koncepte D3.js biblioteke za manipulaciju HTML elementima.
+   Više informacije možete pronaći u kodu i odgovarjućim komentarima.
+
+** Primer Pan Zoom
+   Pogledati na koji način je moguće implementirate Pan i Zoom operacije (~primerPanZoom.html~).
+
+** Primer Tree Layout
+   Pogledati na koji je način moguće podatke prikazati u obliku stabla
+
+   (~primerProdavnicaTreeLayout.html~).
+
+** Primer Force Layout
+   Pogledati na koji je način moguće prikazati podatke upotrebom Force Layout-a (~primerProdavnicaForceLayout.html~).
+
+
+* Zadaci za vežbanje
+  Nakon proučavanje prethodnih materijala, potrebno je odraditi zadatke priložene u /Zadaci.pdf/ dokumentu.
