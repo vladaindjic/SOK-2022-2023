@@ -1,0 +1,77 @@
+Pravila upotreba Gita i GitLaba
+
+1. Kreirati Milestone (ukupno 3: dve kontrolne tacke i odbrana projekta)
+2. planiranje milestone-a:
+   - spisak issuea (feature, tj. funkcionalnosti)
+   - dodeliti issue clanu tima
+
+Izrada feature
+1. issue mora biti dodeljen vama pre izrate feature
+2. sa glavne grane za razvoj (develop grana) radite checkout na
+feature-<naziv-featura-odnosno-issuea>
+3. implementacija feature
+4. testiranje feature (ne mora biti automatizovano)
+5. commit poruke moraju poceti sa #redni-broj-issue (id issue koji 
+gitlab generise) - git commit -m "#1234 Pravljene podgrafa koji 
+zadovoljava kriterijum pretrage"
+6. spajanje sa develop granom nakon uspesnog testiranju putem 
+merge requesta (pull requesta) (MR, PR)
+7. accept MR
+8. zatvaranje issue
+9. GRANE NE BRISATI!!!
+
+Sta ako se desi bug:
+1. ponovno otvaranje (reopen) issuea koji se tice problematicnog featura
+(NE PRAVITE NOVI ISSUE!!!)
+2. dodelite ko zeli da razresi bug
+3. Sa glavne grane za razvog (develop grana) radi se checkout na granu
+bugfix-<naziv-feature-odnosno-issue>
+4. Popravljate bug i pravite commite sa porukom ciji pocetak sadrzi
+#1234 (id issue)
+5. radite lokalno testiranje (ne mora biti automatizovano)
+6. spajanje sa develop granom kroz MR (PR)
+7. NE BRISATI GRANU
+
+Sta je release:
+1. Na kraju svakog milestona praviti release tako sto cete develop granu
+spojiti sa master granom
+2. na master granu pushujute 3 puta u toku semestra
+3. Mozete eventualno i tagovati komit sa verzijama v0.1, v0.2, v0.3
+
+
+OCENJUJE SE KOD KOJI JE NA MASTER GRANI!
+
+DA BI SE MILESTONE BIO USPESAN, MORA BITI 100% ZADOVOLJEN!!!
+
+Struktura projekta:
+1. django projekat (settings.py, urls.py, wsgi.py, ...)
+2. Core django aplikacija (urls.py, models.py, templates, ...)
+   - U njoj definisemo model i interfejse za komunikaciju sa pluginima   
+   - Neophodno je instalirati kao python komponentu da bi plugini mogli 
+da koriste model, odnosno implementiraju pomenute interfejse.
+3. 2 ili 3 plugina za ucitanja podataka (source/izvorisni plugini)
+   - u projektu sa vezbi ih ima samo jedan 
+4. 2 plugina za prikaz podataka (kako oni treba da izgledaju videcemo
+na sledecem terminu vezbi).
+5. zgodna stvar je sto Django zna da prepozna python komponente,
+dok u Core aplikaciji moramo da ih dinamicki prepoznamo prilikom
+ucitavanja
+6. Kad god menjate source kod neke od python komponenti, morate je ponovo
+instalirati. Zgodno je to automatizovati (clean.sh i run.sh skripte)
+
+
+Predlog sta uraditi za prvu kontrolnu tacku:
+1. struktura projekat (u startu razbijene django projekat i aplikaciju
+i napravite foldere za plugine)
+2. python model vase aplikacije (graf, cvorovi, ivice, ...)
+3. dijagram klasa vaseg model
+4. dijagram komponenit vase modularne aplikacije (django projekat,
+django core aplikaciju, 2 plugina za vizualizaciju, 2-3 izvorisna 
+plugina)
+5. pronadjete izvorista podataka koje zelite da vizualizujete
+6. implementacija izvorisnih plugina i integracija sa core aplikacijom
+   - implementacija parsera za neko izvoriste (xml, json, csv, sema
+relacije baze podataka, API za neku stranicu, wiki, ...)
+   - punjenje grafa na osnovu isparsiranih podataka
+7. kako razresiti cikluse u grafu, itd.
+8. implementirati pretragu i filter na serverskom deluje aplikacije
